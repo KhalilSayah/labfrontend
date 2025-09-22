@@ -165,7 +165,7 @@ function Dashboard() {
                 src="/key_with_link.png" 
                 alt="SSH Key" 
                 className="max-w-full h-auto rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => window.open('/key.png', '_blank')}
+                onClick={() => window.open('/key_with_link.png', '_blank')}
               />
             </div>
           </div>
