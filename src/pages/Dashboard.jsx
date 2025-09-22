@@ -7,14 +7,9 @@ import {
   ChartBarIcon,
   UserGroupIcon,
   ExclamationTriangleIcon,
-  EyeIcon,
   ClockIcon,
   ShieldCheckIcon,
-  CpuChipIcon,
-  SignalIcon,
-  ServerIcon,
-  KeyIcon,
-  ArrowDownTrayIcon
+  CpuChipIcon
 } from '@heroicons/react/24/outline';
 
 function Dashboard() {
@@ -53,8 +48,7 @@ function Dashboard() {
 
   const tabs = [
     { id: 'projets', name: 'Projets', icon: BeakerIcon },
-    { id: 'documents', name: 'Documents', icon: DocumentTextIcon },
-    { id: 'infrastructure', name: 'Infrastructure', icon: ServerIcon }
+    { id: 'documents', name: 'Documents', icon: DocumentTextIcon }
   ];
 
   const renderProjectsTab = () => (
@@ -152,22 +146,7 @@ function Dashboard() {
           <div className="space-y-3">
                         {[
               { from: 'IP Address', message: '64.226.119.148', time: '14:32' },
-              { 
-                from: 'Root SSH Pub  KEY', 
-                message: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHQ7F2K1cRph8xHpVlVR49LJomkpYBjX2jFLUbY4mk/ octopouce.contact@gmail.com', 
-                time: '13:45' 
-              },
-              { 
-                from: 'SSH Private KEY', 
-                message: `-----BEGIN OPENSSH PRIVATE KEY-----
-            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-            QyNTUxOQAAACAB0OxditXEaYfMR6VZVUePSyaJpKWAY19oxS1G2OJpPwAAAKBql5O5apeT
-            uQAAAAtzc2gtZWQyNTUxOQAAACAB0OxditXEaYfMR6VZVUePSyaJpKWAY19oxS1G2OJpPw
-            AAAEA8ZpJc+w/HDhYPdDrgeDeVId3Y4zL2WiVble7Hiq/KKQHQ7F2K1cRph8xHpVlVR49L
-            JomkpYBjX2jFLUbY4mk/AAAAG29jdG9wb3VjZS5jb250YWN0QGdtYWlsLmNvbQEC
-            -----END OPENSSH PRIVATE KEY-----`, 
-                time: '12:18' 
-              }
+              
             ].map((msg, index) => (
               <div key={index} className="p-3 bg-dark-slate-800/50 rounded-lg border border-cyber-cyan-500/20">
                 <div className="flex items-center justify-between mb-2">
@@ -179,126 +158,22 @@ function Dashboard() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderInfrastructureTab = () => (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Distant Machine */}
-        <div className="card-cyber">
-          <h3 className="font-cyber font-semibold text-cyber-cyan-200 mb-4 flex items-center">
-            <ServerIcon className="h-5 w-5 mr-2" />
-            Distant Machine
-          </h3>
-          <div className="space-y-4">
+            
             {/* Key Image */}
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mt-4">
               <img 
                 src="/key.png" 
                 alt="SSH Key" 
                 className="max-w-full h-auto rounded-lg border border-cyber-cyan-500/30"
               />
             </div>
-            
-            {/* SSH Credentials */}
-            <div className="space-y-4">
-              <div className="bg-dark-slate-800/50 rounded-lg p-4 border border-cyber-cyan-500/20">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-tech text-sm text-cyber-cyan-300 flex items-center">
-                    <KeyIcon className="h-4 w-4 mr-2" />
-                    Root SSH Pub KEY
-                  </span>
-                  <span className="font-tech text-xs text-cyber-cyan-400">13:45</span>
-                </div>
-                <div className="bg-dark-slate-900/50 p-3 rounded border">
-                  <p className="font-mono text-xs text-cyber-cyan-200 break-all">
-                    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHQ7F2K1cRph8xHpVlVR49LJomkpYBjX2jFLUbY4mk/ octopouce.contact@gmail.com
-                  </p>
-                </div>
-                <a 
-                  href="/ssh-keys/octolab_rsa.pub" 
-                  download="octolab_rsa.pub"
-                  className="mt-2 flex items-center space-x-2 px-3 py-1 bg-cyber-cyan-600/20 hover:bg-cyber-cyan-600/30 border border-cyber-cyan-500/50 rounded text-xs font-tech text-cyber-cyan-300 transition-colors"
-                >
-                  <ArrowDownTrayIcon className="h-3 w-3" />
-                  <span>Download Public Key</span>
-                </a>
-              </div>
-
-              <div className="bg-dark-slate-800/50 rounded-lg p-4 border border-cyber-cyan-500/20">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-tech text-sm text-cyber-cyan-300 flex items-center">
-                    <KeyIcon className="h-4 w-4 mr-2" />
-                    SSH Private KEY
-                  </span>
-                  <span className="font-tech text-xs text-cyber-cyan-400">12:18</span>
-                </div>
-                <div className="bg-dark-slate-900/50 p-3 rounded border max-h-32 overflow-y-auto">
-                  <p className="font-mono text-xs text-cyber-cyan-200 break-all whitespace-pre-wrap">
------BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACAB0OxditXEaYfMR6VZVUePSyaJpKWAY19oxS1G2OJpPwAAAKBql5O5apeT
-uQAAAAtzc2gtZWQyNTUxOQAAACAB0OxditXEaYfMR6VZVUePSyaJpKWAY19oxS1G2OJpPw
-AAAAA8ZpJc+w/HDhYPdDrgeDeVId3Y4zL2WiVble7Hiq/KKQHQ7F2K1cRph8xHpVlVR49L
-JomkpYBjX2jFLUbY4mk/AAAAG29jdG9wb3VjZS5jb250YWN0QGdtYWlsLmNvbQEC
------END OPENSSH PRIVATE KEY-----
-                  </p>
-                </div>
-                <a 
-                  href="/ssh-keys/octolab_rsa" 
-                  download="octolab_rsa"
-                  className="mt-2 flex items-center space-x-2 px-3 py-1 bg-cyber-cyan-600/20 hover:bg-cyber-cyan-600/30 border border-cyber-cyan-500/50 rounded text-xs font-tech text-cyber-cyan-300 transition-colors"
-                >
-                  <ArrowDownTrayIcon className="h-3 w-3" />
-                  <span>Download Private Key</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Lab Activity Logs */}
-        <div className="card-cyber">
-          <h3 className="font-cyber font-semibold text-cyber-cyan-200 mb-4 flex items-center">
-            <EyeIcon className="h-5 w-5 mr-2" />
-            Lab Activity Logs
-          </h3>
-          <div className="space-y-3 max-h-96 overflow-y-auto">
-            {[
-              { scientist: 'Dr. Marina Tentacle', action: 'Specimen analysis initiated', time: '14:32', status: 'active' },
-              { scientist: 'Prof. Kraken', action: 'Containment protocol updated', time: '14:15', status: 'completed' },
-              { scientist: 'Dr. Cephalopod', action: 'Neural interface calibration', time: '13:58', status: 'active' },
-              { scientist: 'Agent Octopus', action: 'Security sweep completed', time: '13:45', status: 'completed' },
-              { scientist: 'Dr. Tentacle', action: 'Sample extraction from Subject-Alpha', time: '13:30', status: 'completed' },
-              { scientist: 'Prof. Kraken', action: 'Biometric scan anomaly detected', time: '13:12', status: 'warning' },
-              { scientist: 'Dr. Marina Tentacle', action: 'Regeneration chamber activated', time: '12:58', status: 'active' },
-              { scientist: 'Agent Octopus', action: 'Perimeter breach - false alarm', time: '12:45', status: 'resolved' }
-            ].map((log, index) => (
-              <div key={index} className="p-3 bg-dark-slate-800/50 rounded-lg border border-cyber-cyan-500/20">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-tech text-sm text-cyber-cyan-300">{log.scientist}</span>
-                  <div className="flex items-center space-x-2">
-                    <span className={`w-2 h-2 rounded-full ${
-                      log.status === 'active' ? 'bg-green-400 animate-pulse' :
-                      log.status === 'warning' ? 'bg-yellow-400' :
-                      log.status === 'completed' ? 'bg-blue-400' :
-                      'bg-gray-400'
-                    }`}></span>
-                    <span className="font-tech text-xs text-cyber-cyan-400">{log.time}</span>
-                  </div>
-                </div>
-                <p className="font-tech text-xs text-cyber-cyan-200">{log.action}</p>
-              </div>
-            ))}
           </div>
         </div>
       </div>
     </div>
   );
+
+
 
 
 
@@ -394,7 +269,6 @@ JomkpYBjX2jFLUbY4mk/AAAAG29jdG9wb3VjZS5jb250YWN0QGdtYWlsLmNvbQEC
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {activeTab === 'projets' && renderProjectsTab()}
           {activeTab === 'documents' && renderDocumentsTab()}
-          {activeTab === 'infrastructure' && renderInfrastructureTab()}
         </div>
       </div>
     </div>
