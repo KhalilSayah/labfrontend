@@ -147,13 +147,27 @@ function Dashboard() {
         <div className="card-cyber">
           <h3 className="font-cyber font-semibold text-cyber-cyan-200 mb-4 flex items-center">
             <ShieldCheckIcon className="h-5 w-5 mr-2" />
-            Messages cryptés
+            Distant Machine
           </h3>
           <div className="space-y-3">
-            {[
-              { from: 'Agent_Alpha', message: 'QWN0aXZhdGlvbiBkdSBwcm90b2NvbGUgT21lZ2E=', time: '14:32' },
-              { from: 'Dr_Tentacle', message: 'TGVzIHNww6ljaW1lbnMgc29udCBwcsOqdHM=', time: '13:45' },
-              { from: 'Base_Command', message: 'TWlzc2lvbiBhY2NvbXBsaWU=', time: '12:18' }
+                        {[
+              { from: 'IP Address', message: '64.226.119.148', time: '14:32' },
+              { 
+                from: 'Root SSH Pub  KEY', 
+                message: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHQ7F2K1cRph8xHpVlVR49LJomkpYBjX2jFLUbY4mk/ octopouce.contact@gmail.com', 
+                time: '13:45' 
+              },
+              { 
+                from: 'SSH Private KEY', 
+                message: `-----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACAB0OxditXEaYfMR6VZVUePSyaJpKWAY19oxS1G2OJpPwAAAKBql5O5apeT
+            uQAAAAtzc2gtZWQyNTUxOQAAACAB0OxditXEaYfMR6VZVUePSyaJpKWAY19oxS1G2OJpPw
+            AAAEA8ZpJc+w/HDhYPdDrgeDeVId3Y4zL2WiVble7Hiq/KKQHQ7F2K1cRph8xHpVlVR49L
+            JomkpYBjX2jFLUbY4mk/AAAAG29jdG9wb3VjZS5jb250YWN0QGdtYWlsLmNvbQEC
+            -----END OPENSSH PRIVATE KEY-----`, 
+                time: '12:18' 
+              }
             ].map((msg, index) => (
               <div key={index} className="p-3 bg-dark-slate-800/50 rounded-lg border border-cyber-cyan-500/20">
                 <div className="flex items-center justify-between mb-2">
