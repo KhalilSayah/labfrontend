@@ -164,7 +164,8 @@ function Dashboard() {
               <img 
                 src="/key.png" 
                 alt="SSH Key" 
-                className="max-w-full h-auto rounded-lg border border-cyber-cyan-500/30"
+                className="max-w-full h-auto rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => window.open('/key.png', '_blank')}
               />
             </div>
           </div>
