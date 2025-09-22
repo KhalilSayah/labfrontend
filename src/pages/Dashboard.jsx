@@ -145,7 +145,7 @@ function Dashboard() {
           </h3>
           <div className="space-y-3">
                         {[
-              { from: 'IP Address', message: '64.226.119.148', time: '14:32' },
+              { from: 'IP Address', message: '159.89.16.223', time: '14:32' },
               
             ].map((msg, index) => (
               <div key={index} className="p-3 bg-dark-slate-800/50 rounded-lg border border-cyber-cyan-500/20">
