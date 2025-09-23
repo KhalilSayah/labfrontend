@@ -206,7 +206,7 @@ function Dashboard() {
                 <div className="flex items-center space-x-4 text-sm font-tech">
                   <div className="flex items-center space-x-2">
                     <UserGroupIcon className="h-4 w-4 text-cyber-cyan-400" />
-                    <span className="text-cyber-cyan-300">Agent: {user?.name}</span>
+                    <span className="text-cyber-cyan-300">Agent: Sam </span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <ShieldCheckIcon className="h-4 w-4 text-cyber-cyan-400" />
